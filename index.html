@@ -16,7 +16,8 @@ yepnope({
     '/js/aggregator.js',
     '/css/dailybread.css',
     '/js/setting.js?20120707',
-    '/js/dailybread.js?20120707'
+    '/js/dailybread.js?20120707',
+    '/js/targetDatas.js'
   ],
   complete: function() {
 
@@ -67,6 +68,27 @@ yepnope({
   -->
   <div>
     <h2 style="width:240px;display:inline-block;vertical-align:top;">あなたの世帯タイプは？</h2>
+    
+      <!--　ここから -->
+	<form name=selyear action="#">
+	    <table>
+	        <tr>
+	            <th>表示対象 ： </th>
+	            <td>
+	                <select name="selectedYear" id="year" onchange="setYear(this.form)" style="width:200px;">
+	                    <option value="2012">2012年度決算</option>	//default value
+	                    <option value="2011">2011年度決算</option>
+	                    <option value="2010">2010年度決算</option>
+	                </select>
+	            </td>
+	        </tr>
+	    </table>
+	      <!-- テスト用 -->
+	    <p><input type="button" value="選択内容を確認" onclick="setData(this.form);" /></p>
+	</form>
+      <!-- ここまで -->
+    
+    
     <div id="select-dependents-type" style="width:450px;display:inline-block;">
       <div class="single">単身世帯</div>
       <div class="family">扶養有り</div>
@@ -89,7 +111,7 @@ yepnope({
      </div>
 
      <div id="db-tax" class="layout-col layout-col-3">
-      <h2>あなたの横浜市税（年間）</h2>
+      <h2>あなたの横手市税（年間）</h2>
       <p>&yen;31.12</p>
      </div>
     </div><!-- /#db-topbar -->
