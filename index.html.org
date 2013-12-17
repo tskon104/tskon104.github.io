@@ -2,9 +2,10 @@
 layout: default
 title: The Daily Bread
 ---
-
-<script>
+<head>
 <script src="/js/targetDatas.js" type="text/javascript"></script>
+</head>
+<script>
 yepnope({
   load: [
     // 'http://wheredoesmymoneygo.org/wp-content/themes/wdmmg/wdmmg.css',
@@ -16,8 +17,7 @@ yepnope({
     '/js/aggregator.js',
     '/css/dailybread.css',
     '/js/setting.js?20120707',
-    '/js/dailybread.js?20120707',
-    '/js/targetDatas.js'
+    '/js/dailybread.js?20120707'
   ],
   complete: function() {
 
@@ -84,47 +84,6 @@ yepnope({
 	      <!-- テスト用 -->
 	    <p><input type="button" value="更新" onclick="setData(this.form);" /></p>
 	</form>
-	
-<script type="text/javascript">
-
-	// var SelectedData;
-	
-	var UseData = UseData || {};
-	UseData.year = "";
-	UseData.fileName = "";
-	
-	var datas = new Array();
-
-	datas[0] = new Array();
-	datas[0][0] = "2010";
-	datas[0][1] = "kessan_2010_yokote";
-
-	datas[1] = new Array();
-	datas[1][0] = "2011";
-	datas[1][1] = "kessan_2011_yokote";
-
-	datas[2] = new Array();
-	datas[2][0] = "2012";
-	datas[2][1] = "kessan_2012_yokote";
-
-    function setData(frmObj) {
-		// SelectedYear=frmObj.elements["selectedYear"].selectedIndex;
-		var select=document.getElementById('year');
-		var options=document.getElementById('year').options;
-		UseData.year=options.item(select.selectedIndex).value;
-		
-		for( var i = 0; i < datas.length; i++ ) {
-			if( datas[i][0] == UseData.year ) {
-			UseData.fileName = datas[i][1];
-			break;
-			}
-		}
-		
-		//確認用
-		alert("year num : " + UseData.year + ", fileName : " + UseData.fileName );
-    }
-
-</script>
       <!-- ここまで -->
 
     <h2 style="width:240px;display:inline-block;vertical-align:top;">あなたの世帯タイプは？</h2>
