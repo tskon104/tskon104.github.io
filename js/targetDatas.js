@@ -1,5 +1,3 @@
-<script type="text/javascript">
-
 	// var SelectedData;
 	
 	var UseData = UseData || {};
@@ -36,5 +34,3 @@
 		//Šm”F—p
 		alert("year num : " + UseData.year + ", fileName : " + UseData.fileName );
     }
-
-</script>
