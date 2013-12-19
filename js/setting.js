@@ -15,6 +15,9 @@ OpenSpending.identifier = UseData.fileName;
 // OpenSpending.year = '2012';							// 可変に↓
 OpenSpending.year = UseData.year;
 
+//確認用
+alert("year num : " + UseData.year + ", fileName : " + UseData.fileName );
+
 OpenSpending.Styles = OpenSpending.Styles || {};
 
 OpenSpending.Styles.Cofog = {
