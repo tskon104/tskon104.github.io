@@ -27,7 +27,9 @@ title: The Daily Bread
 		UseData.year = "2012";
 		UseData.fileName = "kessan_2012_yokote";
 	}
-	
+	alert(paramArray["requestYear"] != null  && paramArray["requestName"] != null);
+	alert("index test. year num : " + UseData.year + ", fileName : " + UseData.fileName );
+
 	var datas = new Array();
 
 	datas[0] = new Array();
@@ -140,9 +142,6 @@ yepnope({
 	            </td>
 	        </tr>
 	    </table>
-	      <!-- テスト用 -->
-	    <p><input type="button" value="更新" onclick="setData(this.form);" /></p>
-
 	</form>
       <!-- ここまで -->
 
