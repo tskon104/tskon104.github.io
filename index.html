@@ -39,7 +39,7 @@ title: The Daily Bread
 		alert("setdata test. year num : " + UseData.year + ", fileName : " + UseData.fileName );
     }
     
-    function display() {
+    var display = function() {
 
     (function ($) {
 
@@ -76,7 +76,7 @@ title: The Daily Bread
         OpenSpending.renderDependentTypes(db);
       });
     })(jQuery)
-  }
+  };
     
     
     
@@ -96,7 +96,7 @@ yepnope({
     '/js/setting.js?20120707',
     '/js/dailybread.js?20120707'
   ],
-  complete: display()
+  complete: display
 });
 
 
