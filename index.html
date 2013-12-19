@@ -31,7 +31,22 @@ title: The Daily Bread
 	}
 	alert(paramArray["requestYear"] != null  && paramArray["requestName"] != null);
 	alert("index test. year num : " + UseData.year + ", fileName : " + UseData.fileName );
-
+	
+	window.onload=function(){
+		var sdata = document.getElementById( 'dataList' );
+		checkSelect( sdata.elements["year"], document.getElementById( 'year' ) );
+	}
+	
+	function checkSelect( obj ){
+		for(var i = 0; i < obj.length; i++){
+			if(obj[i].value == val){
+				obj[i].selected=true;
+				break;
+			}
+		}
+	}
+	
+	
 	var datas = new Array();
 
 	datas[0] = new Array();
@@ -131,7 +146,7 @@ yepnope({
   -->
     <div>
         <!--　ここから -->
-	<form name=selyear action="#">
+	<form name=selyear id=dataList action="#">
 	    <table>
 	        <tr>
 	            <th>対象データ ： </th>
