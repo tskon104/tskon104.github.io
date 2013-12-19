@@ -10,8 +10,10 @@ title: The Daily Bread
 
 	var url = location.href;
 	var params = url.split("?");
-	var paramms = params[1].split("&");
-
+	var paramms = [];
+	if( params.length >= 2 ) {
+		paramms = params[1].split("&");
+	}
 	var paramArray = [];
 	for ( i = 0; i < paramms.length; i++ ) {
     	var item = paramms[i].split("=");
