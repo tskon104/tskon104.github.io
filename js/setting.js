@@ -24,7 +24,7 @@ OpenSpending.Styles.Cofog = {
 
   /* yokohama cofog 横手市に合わせて変更する　→　アイコン直した。残：色 */
   '1': { icon: 'icons/courts.svg', color: '#C75746', bcolor: '#935B3B' },
-  '1-1': { icon: 'icons/courts.svg', color: '#C75746', bcolor: '#935B3B' },
+  '0101': { icon: 'icons/courts.svg', color: '#C75746', bcolor: '#935B3B' },
   '2': { icon: 'icons/publicaffairs.svg', color: '#C75746', bcolor: '#0AB971' },
   '2-1': { icon: 'icons/financial-admin.svg', color: '#C75746', bcolor: '#0AB971' },
   '2-2': { icon: 'icons/debt-asahikawa.svg', color: '#C75746', bcolor: '#0AB971' },
