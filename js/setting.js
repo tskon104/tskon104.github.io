@@ -16,7 +16,7 @@ OpenSpending.identifier = UseData.fileName;
 OpenSpending.year = UseData.year;
 
 //確認用
-alert("js test. year num : " + UseData.year + ", fileName : " + UseData.fileName );
+//alert("js test. year num : " + UseData.year + ", fileName : " + UseData.fileName );
 
 OpenSpending.Styles = OpenSpending.Styles || {};
 

@@ -36,9 +36,6 @@ title: The Daily Bread
 			break;
 			}
 		}
-		
-		//確認用
-		alert("year num : " + UseData.year + ", fileName : " + UseData.fileName );
     }
 
 </script>
@@ -110,7 +107,7 @@ yepnope({
 	        <tr>
 	            <th>対象データ ： </th>
 	            <td>
-	                <select name="selectedYear" id="year" onchange="setYear(this.form)" style="width:200px;">
+	                <select name="selectedYear" id="year" onchange="setData(this.form);" style="width:200px;">
 	                    <option value="2012">2012年度決算</option>
 	                    <option value="2011">2011年度決算</option>
 	                    <option value="2010">2010年度決算</option>
