@@ -7,8 +7,26 @@ title: The Daily Bread
 	// var SelectedData;
 	
 	var UseData = UseData || {};
-	UseData.year = "2012";
-	UseData.fileName = "kessan_2012_yokote";
+
+	var url = location.href;
+	var params = url.split("?");
+	var paramms = params[1].split("&");
+
+	var paramArray = [];
+	for ( i = 0; i < paramms.length; i++ ) {
+    	var item = paramms[i].split("=");
+    	paramArray.push(item[0]);
+    	paramArray[item[0]] = item[1];
+	}
+
+	if( paramArray["requestYear"] != null  && paramArray["requestName"] != null ) {
+		UseData.year = paramArray["requestYear"];
+		UseData.fileName = paramArray["requestName"];
+	}
+	else {
+		UseData.year = "2012";
+		UseData.fileName = "kessan_2012_yokote";
+	}
 	
 	var datas = new Array();
 
@@ -37,7 +55,7 @@ title: The Daily Bread
 			}
 		}
 		alert("setdata test. year num : " + UseData.year + ", fileName : " + UseData.fileName );
-		display();
+		location.href = "index.html?requestYear=" + UseData.year + "&requestName=" + UseData.fileName;
     }
     
     var display = function() {
