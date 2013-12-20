@@ -38,6 +38,7 @@ title: The Daily Bread
 	}
 	
 	function checkSelect( obj, val ){
+	alert( obj[0] + ", " + obj[1] + ", " + obj[2] + ", val = " + val )
 		for(var i = 0; i < obj.length; i++){
 			if(obj[i].value == val){
 				obj[i].selected=true;
