@@ -4,7 +4,20 @@ title: The Daily Bread
 ---
 <script type="text/javascript">
 
-	// var SelectedData;
+	window.onload=function(){
+		var sdata = document.getElementById( "dataList" );
+		checkSelect( sdata.elements["year"], document.getElementById( "year" ) );
+	}
+	
+	function checkSelect( obj, val ){
+	alert( obj[0] + ", " + obj[1] + ", " + obj[2] + ", val = " + val )
+		for(var i = 0; i < obj.length; i++){
+			if(obj[i].value == val){
+				obj[i].selected=true;
+				break;
+			}
+		}
+	}
 	
 	var UseData = UseData || {};
 
@@ -31,22 +44,6 @@ title: The Daily Bread
 	}
 	alert(paramArray["requestYear"] != null  && paramArray["requestName"] != null);
 	alert("index test. year num : " + UseData.year + ", fileName : " + UseData.fileName );
-	
-	window.onload=function(){
-		var sdata = document.getElementById( 'dataList' );
-		checkSelect( sdata.elements["year"], document.getElementById( 'year' ) );
-	}
-	
-	function checkSelect( obj, val ){
-	alert( obj[0] + ", " + obj[1] + ", " + obj[2] + ", val = " + val )
-		for(var i = 0; i < obj.length; i++){
-			if(obj[i].value == val){
-				obj[i].selected=true;
-				break;
-			}
-		}
-	}
-	
 	
 	var datas = new Array();
 
