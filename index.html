@@ -62,9 +62,8 @@ title: The Daily Bread
     
     
 	window.onload=function(){
-	var sdata = document.getElementById( "dataList" );
-	alert("ids : " + document.getElementById( "year" ) + ", now : " + UseData.year );
-	checkSelect( document.getElementById( "year" ), UseData.year );
+		alert("ids : " + document.getElementById( "year" ) + ", now : " + UseData.year );
+		checkSelect( document.getElementById( "year" ), UseData.year );
 	}
 	
 	function checkSelect( obj, val ){
@@ -75,8 +74,6 @@ title: The Daily Bread
 			}
 		}
 	}
-    
-    
     
     var display = function() {
 
@@ -147,7 +144,7 @@ yepnope({
   -->
     <div>
         <!--　ここから -->
-	<form name=selyear id=dataList action="#">
+	<form name=selyear action="#">
 	    <table>
 	        <tr>
 	            <th>対象データ ： </th>

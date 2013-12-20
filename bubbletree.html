@@ -4,11 +4,31 @@ title: 使途別予算額
 ---
 <script type="text/javascript">
 
-	// var SelectedData;
-	
 	var UseData = UseData || {};
-	UseData.year = "2012";
-	UseData.fileName = "kessan_2012_yokote";
+	
+	var url = location.href;
+	var params = url.split("?");
+	var paramms = [];
+	if( params.length >= 2 ) {
+		paramms = params[1].split("&");
+	}
+	var paramArray = [];
+	for ( i = 0; i < paramms.length; i++ ) {
+    	var item = paramms[i].split("=");
+    	paramArray.push(item[0]);
+    	paramArray[item[0]] = item[1];
+	}
+	
+	if( paramArray["requestYear"] != null  && paramArray["requestName"] != null ) {
+		UseData.year = paramArray["requestYear"];
+		UseData.fileName = paramArray["requestName"];
+	}
+	else {
+		UseData.year = "2012";
+		UseData.fileName = "kessan_2012_yokote";
+	}
+	alert(paramArray["requestYear"] != null  && paramArray["requestName"] != null);
+	alert("index test. year num : " + UseData.year + ", fileName : " + UseData.fileName );
 	
 	var datas = new Array();
 
@@ -39,10 +59,22 @@ title: 使途別予算額
 		
 		//確認用
 		alert("year num : " + UseData.year + ", fileName : " + UseData.fileName );
-		display();
+		location.href = "index.html?requestYear=" + UseData.year + "&requestName=" + UseData.fileName;
     }
     
-    
+	window.onload=function(){
+		alert("ids : " + document.getElementById( "year" ) + ", now : " + UseData.year );
+		checkSelect( document.getElementById( "year" ), UseData.year );
+	}
+	
+	function checkSelect( obj, val ){
+		for(var i = 0; i < obj.length; i++){
+			if(obj[i].value == val){
+				obj[i].selected=true;
+				break;
+			}
+		}
+	}
     
     var display = function() {
 
