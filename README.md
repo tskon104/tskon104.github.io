@@ -1,4 +1,4 @@
-# WHERE DOES MY MONEY GO? @ yokote_akita
+# WHERE DOES MY MONEY GO? @ 横手 （準備中。）
 
 wheredoesmymoney.orgの横手市バージョンです．
 

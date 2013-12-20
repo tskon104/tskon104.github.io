@@ -9,20 +9,11 @@ Taxes.huyoKoujo = 380000; // 一人分の扶養控除
 Taxes.taxRate = 0.06; // 住民税率
 
 var OpenSpending = OpenSpending || {};
-
-// OpenSpending.identifier = 'yokohama_budget';		// 可変に↓;
 OpenSpending.identifier = UseData.fileName;
-// OpenSpending.year = '2012';							// 可変に↓
 OpenSpending.year = UseData.year;
-
-//確認用
-//alert("js test. year num : " + UseData.year + ", fileName : " + UseData.fileName );
-
 OpenSpending.Styles = OpenSpending.Styles || {};
 
 OpenSpending.Styles.Cofog = {
-
-  /* yokohama cofog 横手市に合わせて変更する　→　アイコン直した。残：色 */
   '1': { icon: 'icons/courts.svg', color: '#C75746', bcolor: '#935B3B' },
   '0101': { icon: 'icons/courts.svg', color: '#C75746', bcolor: '#935B3B' },
   '2': { icon: 'icons/publicaffairs.svg', color: '#C75746', bcolor: '#0AB971' },

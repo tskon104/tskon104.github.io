@@ -27,8 +27,6 @@ title: The Daily Bread
 		UseData.year = "2012";
 		UseData.fileName = "kessan_2012_yokote";
 	}
-	alert(paramArray["requestYear"] != null  && paramArray["requestName"] != null);
-	alert("index test. year num : " + UseData.year + ", fileName : " + UseData.fileName );
 	
 	var datas = new Array();
 
@@ -56,13 +54,10 @@ title: The Daily Bread
 			break;
 			}
 		}
-		alert("setdata test. year num : " + UseData.year + ", fileName : " + UseData.fileName );
 		location.href = "index.html?requestYear=" + UseData.year + "&requestName=" + UseData.fileName;
     }
     
-    
 	window.onload=function(){
-		alert("ids : " + document.getElementById( "year" ) + ", now : " + UseData.year );
 		checkSelect( document.getElementById( "year" ), UseData.year );
 	}
 	
@@ -143,7 +138,6 @@ yepnope({
   <h2 class="page-header">The Daily Bread <small> Costs for the British Taxpayer per Day</small></h2>
   -->
     <div>
-        <!--　ここから -->
 	<form name=selyear action="#">
 	    <table>
 	        <tr>
@@ -158,7 +152,6 @@ yepnope({
 	        </tr>
 	    </table>
 	</form>
-      <!-- ここまで -->
 
     <h2 style="width:240px;display:inline-block;vertical-align:top;">あなたの世帯タイプは？</h2>
     <div id="select-dependents-type" style="width:450px;display:inline-block;">
