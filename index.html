@@ -37,7 +37,7 @@ title: The Daily Bread
 		checkSelect( sdata.elements["year"], document.getElementById( 'year' ) );
 	}
 	
-	function checkSelect( obj ){
+	function checkSelect( obj, val ){
 		for(var i = 0; i < obj.length; i++){
 			if(obj[i].value == val){
 				obj[i].selected=true;
