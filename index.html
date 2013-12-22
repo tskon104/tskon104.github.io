@@ -27,6 +27,7 @@ title: The Daily Bread
 		UseData.year = "2012";
 		UseData.fileName = "kessan_2012_yokote";
 	}
+	  alert( "index get_year : " + UseData.year );
 	
 	var datas = new Array();
 
@@ -56,11 +57,9 @@ title: The Daily Bread
 		location.href = "index.html?requestYear=" + UseData.year + "&requestName=" + UseData.fileName;
     }
     
-    // add 1222
-    var listYear = fanction() {
-		window.onload=function(){
-			checkSelect( document.getElementById( "year" ), UseData.year );
-		}
+	window.onload=function(){
+	  alert( "onload_year : " + UseData.year );
+		checkSelect( document.getElementById( "year" ), UseData.year );
 	}
 	
 	function checkSelect( obj, val ){
@@ -126,8 +125,7 @@ yepnope({
     '/js/setting.js?20120707',
     '/js/dailybread.js?20120707'
   ],
-  complete: display,
-  listYear
+  complete: display
 });
 
   alert( "js loaded : " + UseData.year + ", " + UseData.fileName );
