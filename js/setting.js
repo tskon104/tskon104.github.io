@@ -3,7 +3,6 @@
  *
  */
  
- alert( "in setting.js" );
 var Taxes = Taxes || {};
 
 Taxes.baseKoujo = 330000; // 住民税基礎控除
@@ -14,6 +13,8 @@ var OpenSpending = OpenSpending || {};
 OpenSpending.identifier = UseData.fileName;
 OpenSpending.year = UseData.year;
 OpenSpending.Styles = OpenSpending.Styles || {};
+
+ alert( "in setting.js year : " + OpenSpending.year + ", " + OpenSpending.identifier );
 
 OpenSpending.Styles.Cofog = {
   '1': { icon: 'icons/courts.svg', color: '#C75746', bcolor: '#935B3B' },
