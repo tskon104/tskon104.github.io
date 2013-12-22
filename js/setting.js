@@ -2,6 +2,8 @@
  * Icons for COFOG taxonomy
  *
  */
+ 
+ alert( "in setting.js" );
 var Taxes = Taxes || {};
 
 Taxes.baseKoujo = 330000; // 住民税基礎控除
@@ -64,5 +66,5 @@ OpenSpending.Styles.Cofog = {
   '1301': { icon: 'icons/economic-aid.svg', color: '#C75746', bcolor: '#790586' },
   '1302': { icon: 'icons/social-systems.svg', color: '#C75746', bcolor: '#790586' }
 };
-
+ alert( "out setting.js" );
 
