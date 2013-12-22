@@ -56,8 +56,8 @@ title: The Daily Bread
 		}
 		location.href = "index.html?requestYear=" + UseData.year + "&requestName=" + UseData.fileName;
     }
-    
-	window.onload=function(){
+    window.onpageshow=function(){
+	//window.onload=function(){
 	  alert( "onload_year : " + UseData.year );
 		checkSelect( document.getElementById( "year" ), UseData.year );
 	}
