@@ -14,8 +14,6 @@ OpenSpending.identifier = UseData.fileName;
 OpenSpending.year = UseData.year;
 OpenSpending.Styles = OpenSpending.Styles || {};
 
- alert( "in setting.js year : " + OpenSpending.year + ", " + OpenSpending.identifier );
-
 OpenSpending.Styles.Cofog = {
   '1': { icon: 'icons/courts.svg', color: '#C75746', bcolor: '#935B3B' },
   '0101': { icon: 'icons/courts.svg', color: '#C75746', bcolor: '#935B3B' },
@@ -67,5 +65,4 @@ OpenSpending.Styles.Cofog = {
   '1301': { icon: 'icons/economic-aid.svg', color: '#C75746', bcolor: '#790586' },
   '1302': { icon: 'icons/social-systems.svg', color: '#C75746', bcolor: '#790586' }
 };
- alert( "out setting.js" );
 

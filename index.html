@@ -6,29 +6,31 @@ title: The Daily Bread
 
 	var UseData = UseData || {};
 
-	var url = location.href;
-	var params = url.split("?");
-	var paramms = [];
-	if( params.length >= 2 ) {
-		paramms = params[1].split("&");
-	}
-	var paramArray = [];
-	for ( i = 0; i < paramms.length; i++ ) {
-    	var item = paramms[i].split("=");
-    	paramArray.push(item[0]);
-    	paramArray[item[0]] = item[1];
-	}
+	function getUseDatas() {
+		var url = location.href;
+		var params = url.split("?");
+		var paramms = [];
+		if( params.length >= 2 ) {
+			paramms = params[1].split("&");
+		}
+		var paramArray = [];
+		for ( i = 0; i < paramms.length; i++ ) {
+	    	var item = paramms[i].split("=");
+	    	paramArray.push(item[0]);
+	    	paramArray[item[0]] = item[1];
+		}
 
-	if( paramArray["requestYear"] != null  && paramArray["requestName"] != null ) {
-		UseData.year = paramArray["requestYear"];
-		UseData.fileName = paramArray["requestName"];
+		if( paramArray["requestYear"] != null  && paramArray["requestName"] != null ) {
+			UseData.year = paramArray["requestYear"];
+			UseData.fileName = paramArray["requestName"];
+		}
+		else {
+			UseData.year = "2012";
+			UseData.fileName = "kessan_2012_yokote";
+		}
 	}
-	else {
-		UseData.year = "2012";
-		UseData.fileName = "kessan_2012_yokote";
-	}
-	  alert( "index get_year : " + UseData.year );
 	
+	getUseDatas();
 	var datas = new Array();
 
 	datas[0] = new Array();
@@ -58,6 +60,7 @@ title: The Daily Bread
     }
     window.onpageshow=function(){
 	//window.onload=function(){
+	  getUseDatas();
 	  alert( "onpageshow UseData.year = " + UseData.year + ", url = " + location.href );
 		checkSelect( document.getElementById( "year" ), UseData.year );
 	}
@@ -127,8 +130,6 @@ yepnope({
   ],
   complete: display
 });
-
-  alert( "js loaded : " + UseData.year + ", " + UseData.fileName );
 </script>
 
 <div id="dailybread">
