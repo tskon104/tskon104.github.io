@@ -4,6 +4,7 @@ title: The Daily Bread
 ---
 <script type="text/javascript">
 
+/*
 	var UseData = UseData || {};
 
 	function getUseDatas() {
@@ -72,45 +73,43 @@ title: The Daily Bread
 			}
 		}
 	}
+*/
+	yepnope("targetDatas.js");
     
-    var display = function() {
+	var display = function() {
+		(function ($) {
+			$(function () {
+				$('#preloader .txt').html('loading data');
+				var db = new OpenSpending.DailyBread($('#dailybread'));
 
-    (function ($) {
+				new OpenSpending.Aggregator({
+					apiUrl: 'http://openspending.org/api',
+					//localApiCache: 'aggregate.json',
+					dataset: OpenSpending.identifier,
+					drilldowns: ['Category', 'Subcategory'],
+					cuts: ['year:' + OpenSpending.year],
+					rootNodeLabel: 'Total',
+					breakdown: 'Subcategory',
+					callback: function(data) {
 
-      $(function () {
+						$('#content-wrap').show();
+						$('#preloader').remove();
 
-        $('#preloader .txt').html('loading data');
-
-       var db = new OpenSpending.DailyBread($('#dailybread'));
-       new OpenSpending.Aggregator({
-           apiUrl: 'http://openspending.org/api',
-           //localApiCache: 'aggregate.json',
-           dataset: OpenSpending.identifier,
-           drilldowns: ['Category', 'Subcategory'],
-           cuts: ['year:' + OpenSpending.year],
-           rootNodeLabel: 'Total',
-           breakdown: 'Subcategory',
-           callback: function(data) {
-
-            $('#content-wrap').show();
-            $('#preloader').remove();
-
-            db.setDataFromAggregator(data, ['unknown']);
-            db.setIconLookup(function(name) {
-              var style = OpenSpending.Styles.Cofog[name];
-              if (style != undefined) {
-               return style['icon'];
-              }
-              return 'icons/unknown.svg';
-            });
-            db.draw();
-           }
-        });
-
-        OpenSpending.renderDependentTypes(db);
-      });
-    })(jQuery)
-  };
+						db.setDataFromAggregator(data, ['unknown']);
+						db.setIconLookup(function(name) {
+							var style = OpenSpending.Styles.Cofog[name];
+							if (style != undefined) {
+								return style['icon'];
+							}
+							return 'icons/unknown.svg';
+						});
+					db.draw();
+					}
+				});
+			OpenSpending.renderDependentTypes(db);
+			});
+		})(jQuery)
+	};
 </script>
 
 <script>

@@ -1,9 +1,31 @@
-	// var SelectedData;
-	
+
 	var UseData = UseData || {};
-	UseData.year = "";
-	UseData.fileName = "";
+
+	function getUseDatas() {
+		var url = location.href;
+		var params = url.split("?");
+		var paramms = [];
+		if( params.length >= 2 ) {
+			paramms = params[1].split("&");
+		}
+		var paramArray = [];
+		for ( i = 0; i < paramms.length; i++ ) {
+	    	var item = paramms[i].split("=");
+	    	paramArray.push(item[0]);
+	    	paramArray[item[0]] = item[1];
+		}
+
+		if( paramArray["requestYear"] != null  && paramArray["requestName"] != null ) {
+			UseData.year = paramArray["requestYear"];
+			UseData.identifier = paramArray["requestName"];
+		}
+		else {
+			UseData.year = "2012";
+			UseData.identifier = "kessan_2012_yokote";
+		}
+	}
 	
+	getUseDatas();
 	var datas = new Array();
 
 	datas[0] = new Array();
@@ -19,18 +41,29 @@
 	datas[2][1] = "kessan_2012_yokote";
 
     function setData(frmObj) {
-		// SelectedYear=frmObj.elements["selectedYear"].selectedIndex;
-		var select=document.getElementById('year');
+		var yearList=document.getElementById('year');
 		var options=document.getElementById('year').options;
-		UseData.year=options.item(select.selectedIndex).value;
+		UseData.year=options.item(yearList.selectedIndex).value;
 		
 		for( var i = 0; i < datas.length; i++ ) {
 			if( datas[i][0] == UseData.year ) {
-			UseData.fileName = datas[i][1];
+			UseData.identifier = datas[i][1];
 			break;
 			}
 		}
-		
-		//Šm”F—p
-		alert("year num : " + UseData.year + ", fileName : " + UseData.fileName );
+		location.href = "index.html?requestYear=" + UseData.year + "&requestName=" + UseData.identifier;
     }
+    window.onpageshow=function(){
+	//window.onload=function(){
+	  getUseDatas();
+		checkSelect( document.getElementById( "year" ), UseData.year );
+	}
+	
+	function checkSelect( obj, val ){
+		for(var i = 0; i < obj.length; i++){
+			if(obj[i].value == val){
+				obj[i].selected=true;
+				break;
+			}
+		}
+	}
