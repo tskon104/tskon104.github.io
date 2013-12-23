@@ -22,11 +22,11 @@ title: 使途別予算額
 		
 		if( paramArray["requestYear"] != null  && paramArray["requestName"] != null ) {
 			UseData.year = paramArray["requestYear"];
-			UseData.fileName = paramArray["requestName"];
+			UseData.identifier = paramArray["requestName"];
 		}
 		else {
 			UseData.year = "2012";
-			UseData.fileName = "kessan_2012_yokote";
+			UseData.identifier = "kessan_2012_yokote";
 		}
 	}
 	
@@ -52,11 +52,11 @@ title: 使途別予算額
 		
 		for( var i = 0; i < datas.length; i++ ) {
 			if( datas[i][0] == UseData.year ) {
-			UseData.fileName = datas[i][1];
+			UseData.identifier = datas[i][1];
 			break;
 			}
 		}
-		location.href = "bubbletree.html?requestYear=" + UseData.year + "&requestName=" + UseData.fileName;
+		location.href = "bubbletree.html?requestYear=" + UseData.year + "&requestName=" + UseData.identifier;
     }
     
     window.onpageshow=function(){

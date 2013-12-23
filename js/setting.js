@@ -10,7 +10,7 @@ Taxes.huyoKoujo = 380000; // 一人分の扶養控除
 Taxes.taxRate = 0.06; // 住民税率
 
 var OpenSpending = OpenSpending || {};
-OpenSpending.identifier = UseData.fileName;
+OpenSpending.identifier = UseData.identifier;
 OpenSpending.year = UseData.year;
 OpenSpending.Styles = OpenSpending.Styles || {};
 
