@@ -30,6 +30,7 @@ title: 使途別予算額
 		}
 	}
 	
+	getUseDatas();
 	var datas = new Array();
 
 	datas[0] = new Array();
@@ -45,10 +46,9 @@ title: 使途別予算額
 	datas[2][1] = "kessan_2012_yokote";
 
     function setData(frmObj) {
-		// SelectedYear=frmObj.elements["selectedYear"].selectedIndex;
-		var select=document.getElementById('year');
+		var yearList=document.getElementById('year');
 		var options=document.getElementById('year').options;
-		UseData.year=options.item(select.selectedIndex).value;
+		UseData.year=options.item(yearList.selectedIndex).value;
 		
 		for( var i = 0; i < datas.length; i++ ) {
 			if( datas[i][0] == UseData.year ) {
@@ -58,7 +58,6 @@ title: 使途別予算額
 		}
 		location.href = "bubbletree.html?requestYear=" + UseData.year + "&requestName=" + UseData.identifier;
     }
-    
     window.onpageshow=function(){
 	//window.onload=function(){
 	  getUseDatas();
@@ -75,7 +74,6 @@ title: 使途別予算額
 	}
     
     var display = function() {
-
     $(function() {
       var $tooltip = $('<div class="tooltip">Tooltip</div>');
       $('.bubbletree').append($tooltip);
@@ -144,7 +142,7 @@ title: 使途別予算額
 	        <tr>
 	            <th>表示する年度を選んでください </th>
 	            <td>
-	                <select name="selectedYear" id="year" onchange="setData(this.form)" style="width:200px;">
+	                <select name="selectedYear" id="year" onchange="setData(this.form);" style="width:200px;">
 	                    <option value="2012">2012年度</option>
 	                    <option value="2011">2011年度</option>
 	                    <option value="2010">2010年度</option>
