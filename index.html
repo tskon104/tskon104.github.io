@@ -5,6 +5,17 @@ title: The Daily Bread
 <script type="text/javascript">
 
 	var UseData = UseData || {};
+	
+	var datas = new Array();
+	datas[0] = new Array();
+	datas[0][0] = "2010";
+	datas[0][1] = "kessan_2010_yokote";
+	datas[1] = new Array();
+	datas[1][0] = "2011";
+	datas[1][1] = "kessan_2011_yokote";
+	datas[2] = new Array();
+	datas[2][0] = "2012";
+	datas[2][1] = "kessan_2012_yokote";
 
 	function getUseDatas() {
 		var url = location.href;
@@ -29,39 +40,6 @@ title: The Daily Bread
 			UseData.identifier = "kessan_2012_yokote";
 		}
 	}
-	
-	getUseDatas();
-	var datas = new Array();
-
-	datas[0] = new Array();
-	datas[0][0] = "2010";
-	datas[0][1] = "kessan_2010_yokote";
-
-	datas[1] = new Array();
-	datas[1][0] = "2011";
-	datas[1][1] = "kessan_2011_yokote";
-
-	datas[2] = new Array();
-	datas[2][0] = "2012";
-	datas[2][1] = "kessan_2012_yokote";
-
-    //window.onpageshow=function(){
-    function reloadList(){
-	  getUseDatas();
-		checkSelect( document.getElementById( "year" ), UseData.year );
-	}
-	
-	function checkSelect( obj, val ){
-		for(var i = 0; i < obj.length; i++){
-			if(obj[i].value == val){
-				obj[i].selected=true;
-				alert( "list year true : " + obj[i].value );
-				// break;
-			} else {
-				obj[i].selected=false;
-			}
-		}
-	}
 
     function setData(frmObj) {
 		var yearList=document.getElementById('year');
@@ -78,6 +56,24 @@ title: The Daily Bread
 		window.onpageshow=reloadList();
     }
 
+    function reloadList() {
+	  getUseDatas();
+		checkSelect( document.getElementById( "year" ), UseData.year );
+	}
+	
+	function checkSelect( obj, val ){
+		for(var i = 0; i < obj.length; i++){
+			if(obj[i].value == val){
+				obj[i].selected=true;
+				alert( "list year true : " + obj[i].value );
+				// break;
+			} else {
+				obj[i].selected=false;
+			}
+		}
+	}
+
+	getUseDatas();
 	window.onpageshow=reloadList();
     
 	var display = function() {
