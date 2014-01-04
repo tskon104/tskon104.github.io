@@ -68,7 +68,10 @@ title: The Daily Bread
 		for(var i = 0; i < obj.length; i++){
 			if(obj[i].value == val){
 				obj[i].selected=true;
-				break;
+				alert( "list year true : " + obj[i].value );
+				// break;
+			} else {
+				obj[i].selected=false;
 			}
 		}
 	}
