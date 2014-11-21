@@ -20,8 +20,8 @@
 			UseData.identifier = paramArray["requestName"];
 		}
 		else {
-			UseData.year = "2012";
-			UseData.identifier = "kessan_2012_yokote";
+			UseData.year = "2013";
+			UseData.identifier = "kessan_2013_yokote";
 		}
 	}
 	
@@ -39,6 +39,10 @@
 	datas[2] = new Array();
 	datas[2][0] = "2012";
 	datas[2][1] = "kessan_2012_yokote";
+
+	datas[3] = new Array();
+	datas[3][0] = "2013";
+	datas[3][1] = "kessan_2013_yokote";
 
     function setData(frmObj) {
 		var yearList=document.getElementById('year');
